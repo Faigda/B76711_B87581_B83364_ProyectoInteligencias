@@ -79,10 +79,11 @@ public class QuestionsActivity extends AppCompatActivity{
 
         if(currentQuestion==totalQuestions){
             saveInfo();
+        } else {
+            questionLabel.setText(this.questionList.getQuestions().get(currentQuestion).getQuestion());
+            progressLabel.setText("Progreso: " + (currentQuestion+1) + " / " + totalQuestions);
         }
 
-        questionLabel.setText(this.questionList.getQuestions().get(currentQuestion).getQuestion());
-        progressLabel.setText("Progreso: " + (currentQuestion+1) + " / " + totalQuestions);
     }
 
     private void saveInfo(){
