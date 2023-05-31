@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.B76711_B87581_B83364_ProyectoInteligencias" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.B76711_B87581_B83364_ProyectoInteligencias" parent="Base.Theme.B76711_B87581_B83364_ProyectoInteligencias" />
+</resources>
