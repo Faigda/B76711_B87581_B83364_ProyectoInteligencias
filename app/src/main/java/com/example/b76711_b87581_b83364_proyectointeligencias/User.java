@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class User{
 
-    private String name;
+    private String name, principalIntelligence;
     private ArrayList<Intelligence> intelligences;
 
     public User(String name){
         this.name = name;
         this.intelligences = new ArrayList<>();
-        this.intelligences.add(new Intelligence(1, "Espacial"));
-        this.intelligences.add(new Intelligence(2, "Musical"));
-        this.intelligences.add(new Intelligence(3, "Lingüístico-Verbal"));
-        this.intelligences.add(new Intelligence(4, "Lógico-Matemática"));
-        this.intelligences.add(new Intelligence(5, "Corporal-Cinestésica"));
-        this.intelligences.add(new Intelligence(6, "Intrapersonal"));
-        this.intelligences.add(new Intelligence(7, "Interpersonal"));
-        this.intelligences.add(new Intelligence(8, "Naturalista"));
-        this.intelligences.add(new Intelligence(9, "Existencial"));
-        this.intelligences.add(new Intelligence(10, "Creativa"));
-        this.intelligences.add(new Intelligence(11, "Emocional"));
-        this.intelligences.add(new Intelligence(12, "Colaborativa"));
+        this.intelligences.add(new Intelligence("Espacial"));
+        this.intelligences.add(new Intelligence("Musical"));
+        this.intelligences.add(new Intelligence("Lingüístico-Verbal"));
+        this.intelligences.add(new Intelligence("Lógico-Matemática"));
+        this.intelligences.add(new Intelligence("Corporal-Cinestésica"));
+        this.intelligences.add(new Intelligence("Intrapersonal"));
+        this.intelligences.add(new Intelligence("Interpersonal"));
+        this.intelligences.add(new Intelligence("Naturalista"));
+        this.intelligences.add(new Intelligence("Existencial"));
+        this.intelligences.add(new Intelligence("Creativa"));
+        this.intelligences.add(new Intelligence("Emocional"));
+        this.intelligences.add(new Intelligence("Colaborativa"));
     }
 
     public void setIntelligence(ArrayList<Intelligence> intelligences) {
@@ -34,5 +34,13 @@ public class User{
 
     public ArrayList<Intelligence> getIntelligence() {
         return this.intelligences;
+    }
+
+    public void setPrincipalIntelligence(String principalIntelligence) {
+        this.principalIntelligence = principalIntelligence;
+    }
+
+    public String getPrincipalIntelligence() {
+        return principalIntelligence;
     }
 }

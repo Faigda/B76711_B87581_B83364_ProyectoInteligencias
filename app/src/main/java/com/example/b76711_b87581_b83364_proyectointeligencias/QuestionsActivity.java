@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuestionsActivity extends AppCompatActivity{
 
@@ -87,8 +88,33 @@ public class QuestionsActivity extends AppCompatActivity{
     }
 
     private void saveInfo(){
+
+        int finalScore = 0;
+        String intelligenceName = "";
+
+        //Se decide cual es la inteligencia principal
+        for (Intelligence intelligence : this.user.getIntelligence()) {
+            System.out.println("Inteligencia: " + intelligence.getName());
+            System.out.println("Puntaje: " + intelligence.getScore());
+            if(intelligence.getScore() > finalScore){
+                finalScore = intelligence.getScore();
+                intelligenceName = intelligence.getName();
+            }
+        }
+
+        System.out.println("Inteligencia FINAL: " + intelligenceName);
+        System.out.println("Puntaje FINAL: " + finalScore);
+        this.user.setPrincipalIntelligence(intelligenceName);
+
         //Se guarda la info en la bd.
-        System.out.println("Espacial: "+ this.user.getIntelligence().get(0).getScore());
+        DataBaseObject dataBaseObject = new DataBaseObject(QuestionsActivity.this);
+        boolean success = dataBaseObject.addOne(this.user);
+        if(success){
+            Toast.makeText(QuestionsActivity.this, "Información guardada.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(QuestionsActivity.this, "Error.", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }

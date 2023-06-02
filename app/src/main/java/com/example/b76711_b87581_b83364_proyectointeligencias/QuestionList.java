@@ -10,18 +10,18 @@ public class QuestionList {
     public QuestionList(){
 
         //Creacion de inteligencias
-        Intelligence intelligenceEspacial = new Intelligence(1, "Espacial");
-        Intelligence intelligenceMusical = new Intelligence(2, "Musical");
-        Intelligence intelligenceLinguisticoVerbal = new Intelligence(3, "Lingüístico-Verbal");
-        Intelligence intelligenceLogicoMatematica = new Intelligence(4, "Lógico-Matemática");
-        Intelligence intelligenceCorporalCinestesica = new Intelligence(5, "Corporal-Cinestésica");
-        Intelligence intelligenceIntrapersonal = new Intelligence(6, "Intrapersonal");
-        Intelligence intelligenceInterpersonal = new Intelligence(7, "Interpersonal");
-        Intelligence intelligenceNaturalista = new Intelligence(8, "Naturalista");
-        Intelligence intelligenceExistencial = new Intelligence(9, "Existencial");
-        Intelligence intelligenceCreativa = new Intelligence(10, "Creativa");
-        Intelligence intelligenceEmocional = new Intelligence(11, "Emocional");
-        Intelligence intelligenceColaborativa = new Intelligence(12, "Colaborativa");
+        Intelligence intelligenceEspacial = new Intelligence("Espacial");
+        Intelligence intelligenceMusical = new Intelligence("Musical");
+        Intelligence intelligenceLinguisticoVerbal = new Intelligence("Lingüístico-Verbal");
+        Intelligence intelligenceLogicoMatematica = new Intelligence("Lógico-Matemática");
+        Intelligence intelligenceCorporalCinestesica = new Intelligence("Corporal-Cinestésica");
+        Intelligence intelligenceIntrapersonal = new Intelligence("Intrapersonal");
+        Intelligence intelligenceInterpersonal = new Intelligence("Interpersonal");
+        Intelligence intelligenceNaturalista = new Intelligence("Naturalista");
+        Intelligence intelligenceExistencial = new Intelligence("Existencial");
+        Intelligence intelligenceCreativa = new Intelligence("Creativa");
+        Intelligence intelligenceEmocional = new Intelligence("Emocional");
+        Intelligence intelligenceColaborativa = new Intelligence("Colaborativa");
 
         //Creacion de preguntas
 

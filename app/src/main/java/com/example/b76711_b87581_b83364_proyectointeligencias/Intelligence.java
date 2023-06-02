@@ -2,11 +2,10 @@ package com.example.b76711_b87581_b83364_proyectointeligencias;
 
 public class Intelligence {
 
-    private int code, score;
+    private int score;
     private String name;
 
-    public Intelligence(int code, String name){
-        this.code = code;
+    public Intelligence(String name){
         this.score = 0;
         this.name = name;
     }
@@ -15,15 +14,15 @@ public class Intelligence {
         this.score += score;
     }
 
-    public int getCode(){
-        return this.code;
-    }
-
     public int getScore(){
         return this.score;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }
