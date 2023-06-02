@@ -16,23 +16,27 @@
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/questionLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/questionLabel"
-        android:text="Question"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
         android:layout_above="@id/choicesLayout"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:layout_below="@+id/progressLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Question"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/choicesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:id="@+id/choicesLayout">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/pocoButton"

@@ -79,7 +79,8 @@ public class QuestionsActivity extends AppCompatActivity{
     private void loadNewQuestion(){
 
         if(currentQuestion==totalQuestions){
-            saveInfo();
+            nextActivity();
+
         } else {
             questionLabel.setText(this.questionList.getQuestions().get(currentQuestion).getQuestion());
             progressLabel.setText("Progreso: " + (currentQuestion+1) + " / " + totalQuestions);
@@ -87,23 +88,19 @@ public class QuestionsActivity extends AppCompatActivity{
 
     }
 
-    private void saveInfo(){
+    private void nextActivity(){
 
         int finalScore = 0;
         String intelligenceName = "";
 
         //Se decide cual es la inteligencia principal
         for (Intelligence intelligence : this.user.getIntelligence()) {
-            System.out.println("Inteligencia: " + intelligence.getName());
-            System.out.println("Puntaje: " + intelligence.getScore());
             if(intelligence.getScore() > finalScore){
                 finalScore = intelligence.getScore();
                 intelligenceName = intelligence.getName();
             }
         }
 
-        System.out.println("Inteligencia FINAL: " + intelligenceName);
-        System.out.println("Puntaje FINAL: " + finalScore);
         this.user.setPrincipalIntelligence(intelligenceName);
 
         //Se guarda la info en la bd.
@@ -111,8 +108,14 @@ public class QuestionsActivity extends AppCompatActivity{
         boolean success = dataBaseObject.addOne(this.user);
         if(success){
             Toast.makeText(QuestionsActivity.this, "Información guardada.", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(QuestionsActivity.this, MatchActivity.class);
+            intent.putExtra("user", this.user.getName());
+            intent.putExtra("intelligence", intelligenceName);
+            intent.putExtra("score", finalScore);
+
+            startActivity(intent);
         } else {
-            Toast.makeText(QuestionsActivity.this, "Error.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuestionsActivity.this, "Ocurrió un error al ingresar la información en la base de datos.", Toast.LENGTH_SHORT).show();
         }
 
     }
