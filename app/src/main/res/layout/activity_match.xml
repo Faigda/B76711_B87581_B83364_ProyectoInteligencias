@@ -16,6 +16,7 @@
         android:id="@+id/userLabel"
         android:textAlignment="center"
         android:textStyle="bold"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:text="Usuario," />
@@ -41,10 +42,10 @@
         android:id="@+id/intelligenceLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Emocional"
+        android:text="Inteligencia"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="30sp"
         android:textStyle="italic" />
 
     <androidx.cardview.widget.CardView
@@ -71,7 +72,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginBottom="15dp"
-                android:textSize="20dp"/>
+                android:textSize="27sp"/>
 
             <TextView
                 android:id="@+id/match1Label"
@@ -79,7 +80,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="1) Nombre - Intelligencia"
+                android:text=""
+                android:textSize="15sp"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -88,7 +90,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="2) Nombre - Intelligencia"
+                android:text=""
+                android:textSize="15sp"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -97,7 +100,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="3) Nombre - Intelligencia"
+                android:textSize="15sp"
+                android:text=""
                 android:textColor="@color/black"/>
 
             <TextView
@@ -106,7 +110,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="4) Nombre - Intelligencia"
+                android:textSize="15sp"
+                android:text=""
                 android:textColor="@color/black"/>
 
             <TextView
@@ -115,7 +120,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="5) Nombre - Intelligencia"
+                android:textSize="15sp"
+                android:text=""
                 android:textColor="@color/black"/>
 
             <TextView
@@ -124,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:text="6) Nombre - Intelligencia"
+                android:textSize="15sp"
+                android:text=""
                 android:textColor="@color/black"/>
 
             <TextView
@@ -132,8 +139,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textSize="15sp"
                 android:padding="8dp"
-                android:text="7) Nombre - Intelligencia"
+                android:text=""
                 android:textColor="@color/black"/>
 
 

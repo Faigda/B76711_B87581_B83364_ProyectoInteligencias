@@ -143,9 +143,11 @@ public class DataBaseObject extends SQLiteOpenHelper {
                 user.getIntelligence().get(11).setScore(cursor.getInt(12));
                 user.setPrincipalIntelligence(cursor.getString(13));
 
+                System.out.println("Usuario: " + user.getName());
+
                 userList.add(user);
 
-            } while (cursor.moveToFirst());
+            } while (cursor.moveToNext());
         } else {
             return null;
         }

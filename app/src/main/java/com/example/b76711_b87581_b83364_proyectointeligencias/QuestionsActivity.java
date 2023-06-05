@@ -50,7 +50,7 @@ public class QuestionsActivity extends AppCompatActivity{
         if(clickedButton.getId()==R.id.pocoButton){
             for(Intelligence intelligence : this.user.getIntelligence()) {
                 if(intelligence.getName().equals(this.questionList.getQuestions().get(currentQuestion).getIntelligence().getName())){
-                    intelligence.addScore(1);
+                    intelligence.addScore(6);
                 }
             }
         }
@@ -58,7 +58,7 @@ public class QuestionsActivity extends AppCompatActivity{
         if(clickedButton.getId()==R.id.normalButton){
             for(Intelligence intelligence : this.user.getIntelligence()) {
                 if(intelligence.getName().equals(this.questionList.getQuestions().get(currentQuestion).getIntelligence().getName())){
-                    intelligence.addScore(3);
+                    intelligence.addScore(12);
                 }
             }
         }
@@ -66,7 +66,7 @@ public class QuestionsActivity extends AppCompatActivity{
         if(clickedButton.getId()==R.id.muchoButton){
             for(Intelligence intelligence : this.user.getIntelligence()) {
                 if(intelligence.getName().equals(this.questionList.getQuestions().get(currentQuestion).getIntelligence().getName())){
-                    intelligence.addScore(6);
+                    intelligence.addScore(18);
                 }
             }
         }

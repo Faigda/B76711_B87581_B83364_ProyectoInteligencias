@@ -7,6 +7,8 @@ public class User{
     private String name, principalIntelligence;
     private ArrayList<Intelligence> intelligences;
 
+    private int mcd;
+
     public User(String name){
         this.name = name;
         this.intelligences = new ArrayList<>();
@@ -42,5 +44,13 @@ public class User{
 
     public String getPrincipalIntelligence() {
         return principalIntelligence;
+    }
+
+    public int getMcd() {
+        return mcd;
+    }
+
+    public void setMcd(int mcd) {
+        this.mcd = mcd;
     }
 }
