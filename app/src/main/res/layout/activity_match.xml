@@ -9,7 +9,7 @@
     android:gravity="center"
     android:background="@color/creme"
     tools:context=".MainActivity">
-
+    
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

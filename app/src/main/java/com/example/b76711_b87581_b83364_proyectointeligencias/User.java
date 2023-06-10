@@ -7,7 +7,7 @@ public class User{
     private String name, principalIntelligence;
     private ArrayList<Intelligence> intelligences;
 
-    private int mcd;
+    private int distance;
 
     public User(String name){
         this.name = name;
@@ -46,11 +46,11 @@ public class User{
         return principalIntelligence;
     }
 
-    public int getMcd() {
-        return mcd;
+    public int getDistance() {
+        return distance;
     }
 
-    public void setMcd(int mcd) {
-        this.mcd = mcd;
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 }

@@ -93,69 +93,28 @@ public class MatchActivity extends AppCompatActivity {
         DataBaseObject dataBaseObject = new DataBaseObject(MatchActivity.this);
         this.userlist = dataBaseObject.getEveryone();
 
-        int scoreUser = getIntent().getIntExtra("score", 0);
-        String intelligenceUser = getIntent().getStringExtra("intelligence");
-        System.out.println("MI PUNTAJE: "+ scoreUser);
+        EuclideanDistance euclideanDistance = new EuclideanDistance();
 
-        EuclideanAlgorithm euclideanAlgorithm = new EuclideanAlgorithm();
+        User userA = new User(getIntent().getStringExtra("user"));
+        User[] userMatch = new User[this.userlist.size()-1];
+        int index = 0;
 
         try {
 
             for (User user : this.userlist) {
-                if(!user.getName().equals(getIntent().getStringExtra("user"))){
-                    for (Intelligence intelligence : user.getIntelligence()) {
-                        if(intelligence.getName().equals(intelligenceUser)){
-                            user.setMcd(euclideanAlgorithm.mcd(scoreUser, intelligence.getScore()));
-                            break;
-                        }
-                    }
-                }
-            }
-
-            User[] userMatch = new User[this.userlist.size()-1];
-            int index = 0;
-
-            for (User user : this.userlist) {
-                if(!user.getName().equals(getIntent().getStringExtra("user"))){
+                if(user.getName().equals(getIntent().getStringExtra("user"))){
+                    userA.setIntelligence(user.getIntelligence());
+                }else{
                     userMatch[index] = user;
                     index++;
                 }
             }
 
-            //Eliminar este for ----------------------------------------------------------------------------------------------------------------------------------------------
-            System.out.println("Sin ordenar");
-            System.out.println(userMatch.length);
-            for (int i = 0; i < userMatch.length; i++){
-                System.out.println("Usuario: " + userMatch[i].getName());
-                System.out.println("MCD: " + userMatch[i].getMcd());
-                for (Intelligence intelligence : userMatch[i].getIntelligence()) {
-                    if(intelligence.getName().equals(intelligenceUser)){
-                        System.out.println("Inteligencia: " + intelligence.getName());
-                        System.out.println("Puntaje: " + intelligence.getScore());
-                        System.out.println("//////////////////////////////////////");
-                    }
-                }
+            for(int i = 0; i < userMatch.length; i++){
+                userMatch[i].setDistance(euclideanDistance.getEuclideanDistance(userA, userMatch[i]));
             }
-            System.out.println("----------------------------------------------------------------------");
 
-            //Aqui
-
-            Arrays.sort(userMatch, Comparator.comparingInt(User::getMcd).reversed());
-
-            System.out.println("Ordenado");
-            for (int i = 0; i < userMatch.length; i++){
-                System.out.println("Usuario: " + userMatch[i].getName());
-                System.out.println("MCD: " + userMatch[i].getMcd());
-                for (Intelligence intelligence : userMatch[i].getIntelligence()) {
-                    if(intelligence.getName().equals(intelligenceUser)){
-                        System.out.println("Inteligencia: " + intelligence.getName());
-                        System.out.println("Puntaje: " + intelligence.getScore());
-                        System.out.println("//////////////////////////////////////");
-                    }
-                }
-            }
-            System.out.println("------------------------------------------------------------------------");
-
+            Arrays.sort(userMatch, Comparator.comparingInt(User::getDistance));
 
             match1Label.setText("1) " + userMatch[0].getName() + " - " + userMatch[0].getPrincipalIntelligence());
             match2Label.setText("2) " + userMatch[1].getName() + " - " + userMatch[1].getPrincipalIntelligence());

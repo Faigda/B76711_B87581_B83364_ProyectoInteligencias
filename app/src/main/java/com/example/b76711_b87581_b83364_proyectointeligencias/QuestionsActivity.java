@@ -107,11 +107,9 @@ public class QuestionsActivity extends AppCompatActivity{
         DataBaseObject dataBaseObject = new DataBaseObject(QuestionsActivity.this);
         boolean success = dataBaseObject.addOne(this.user);
         if(success){
-            Toast.makeText(QuestionsActivity.this, "Información guardada.", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(QuestionsActivity.this, MatchActivity.class);
             intent.putExtra("user", this.user.getName());
             intent.putExtra("intelligence", intelligenceName);
-            intent.putExtra("score", finalScore);
 
             startActivity(intent);
         } else {
