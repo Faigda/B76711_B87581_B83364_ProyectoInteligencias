@@ -2,7 +2,10 @@ package com.example.b76711_b87581_b83364_proyectointeligencias;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +17,7 @@ public class MatchActivity extends AppCompatActivity {
 
     TextView intelligenceLabel, userLabel, match1Label, match2Label, match3Label, match4Label, match5Label, match6Label, match7Label;
     ImageView intelligenceImage;
+    Button restartButton;
 
     private ArrayList<User> userlist;
 
@@ -30,6 +34,7 @@ public class MatchActivity extends AppCompatActivity {
         match6Label = findViewById(R.id.match6Label);
         match7Label = findViewById(R.id.match7Label);
 
+        restartButton = findViewById(R.id.restartButton);
 
         userLabel = findViewById(R.id.userLabel);
         intelligenceImage = (ImageView) findViewById(R.id.intelligenceImage);
@@ -127,6 +132,14 @@ public class MatchActivity extends AppCompatActivity {
         } catch (Exception ArrayIndexOutOfBoundsException){
 
         }
+
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MatchActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
